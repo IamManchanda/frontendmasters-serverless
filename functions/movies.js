@@ -10,7 +10,7 @@ exports.handler = async () => {
     return fetch(api)
       .then((response) => response.json())
       .then((data) => {
-        const scores = data.Ratings;
+        const { Ratings: scores } = data;
         return {
           ...movie,
           scores,
