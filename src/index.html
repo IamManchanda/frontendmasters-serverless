@@ -72,8 +72,7 @@
 
 <script>
   (async function initialize() {
-    const response = await fetch("/.netlify/functions/movies");
-    const movies = await response.json();
+    const movies = await (await fetch("/.netlify/functions/movies")).json();
 
     const container = document.querySelector(".movies");
     const template = document.querySelector("#movie-template");
